@@ -1,7 +1,0 @@
-package com.example.JPA.Repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface bookRepo extends JpaRepository<T, ID> {
-
-}

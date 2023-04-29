@@ -3,6 +3,7 @@ package com.example.project.Model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name="museam")
@@ -12,6 +13,7 @@ public class MuseumModel {
 	private String location;
 	private String mname;
 	private String artifactname;
+	@Transient
 	private String artifactcat;
 	private int noofstaffs;
 	private int year;

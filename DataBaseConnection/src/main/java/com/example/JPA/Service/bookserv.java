@@ -31,5 +31,8 @@ public class bookserv {
 	public void deleteInfo(int bookno) {
 		brepo.deleteById(bookno);
 	}
+	
+	
+	
 
 }
