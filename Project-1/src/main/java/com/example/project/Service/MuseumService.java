@@ -51,4 +51,16 @@ public class MuseumService {
 			Page<MuseumModel> p =obj.findAll(PageRequest.of(pageno, pagesize));
 			return p.getContent();					
 		}
+		
+		
+		
+		//sorting and pagination together
+		
+		public List<MuseumModel> pageandsort(int pageno,int pagesize,String pname){
+			Page<MuseumModel> p=obj.findAll(PageRequest.of(pageno, pagesize,Sort.by(pname).descending()));
+			return p.getContent();
+		}
+		
+		//jpql
+		
 }

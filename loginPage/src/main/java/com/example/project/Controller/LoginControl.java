@@ -15,7 +15,7 @@ import com.example.project.Service.LoginService;
 
 @RestController
 @RequestMapping("/user")
-public class LoginControl {
+public class LoginControl { 
 	@Autowired
 	private LoginService lserv;
 	@PostMapping("/postmodel")

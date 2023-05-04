@@ -25,7 +25,7 @@ public interface MuseumRepo extends JpaRepository<MuseumModel,Integer>
 	
 	@Modifying
 	@Transactional
-	@Query(value="delete from museam where artifactid=?1 and artifactname=?2",nativeQuery = true)
+	@Query(value="delete from museam where artifactid=? and artifactname=?",nativeQuery = true)
 	Integer deleteId(@Param("id") int pid,@Param("name") String pname);
 	
 	@Modifying
@@ -34,6 +34,21 @@ public interface MuseumRepo extends JpaRepository<MuseumModel,Integer>
 	public void updatebyquery(@Param("pid") int pid,@Param("pname") String pname);
 	
 	
+	//jpql queries
+
+	
+	//@Query("select e from museam e")
+	//public List<MuseumModel> getAll();
+	
+	  @Query("select e from MuseumModel e")
+	    List<MuseumModel> getAll();
+	  
+	  @Query(value="select e from MuseumModel e where e.artifactid=?1")
+	  public List<MuseumModel> jpql(@Param("id") int sid);
+	  
+	  
+	  
+
 	
 }
 
