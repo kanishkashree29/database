@@ -2,8 +2,11 @@ package com.example.project.Model;
 
 
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 
@@ -22,6 +25,9 @@ public class MuseumModel {
 	private String creatorname;
 	private String empname;
 	private int accessionno;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn
+	private MuseumLocation address;
 	public int getArtifactid() {
 		return artifactid;
 	}
@@ -81,6 +87,12 @@ public class MuseumModel {
 	}
 	public void setAccessionno(int accessionno) {
 		this.accessionno = accessionno;
+	}
+	public  MuseumLocation getAddress() {
+		return address;
+	}
+	public void setAddress(MuseumLocation address) {
+		this.address = address;
 	}
 	
 
